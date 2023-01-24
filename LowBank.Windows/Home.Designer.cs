@@ -28,41 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.AccountTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.accountTextbox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // accountTextbox
             // 
-            this.button1.Location = new System.Drawing.Point(132, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // AccountTextBox
-            // 
-            this.AccountTextBox.Location = new System.Drawing.Point(12, 60);
-            this.AccountTextBox.Name = "AccountTextBox";
-            this.AccountTextBox.Size = new System.Drawing.Size(100, 23);
-            this.AccountTextBox.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.accountTextbox.Location = new System.Drawing.Point(65, 57);
+            this.accountTextbox.Name = "accountTextbox";
+            this.accountTextbox.Size = new System.Drawing.Size(110, 25);
+            this.accountTextbox.TabIndex = 0;
+            this.accountTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(132, 12);
+            this.searchButton.Location = new System.Drawing.Point(196, 57);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(108, 23);
+            this.searchButton.Size = new System.Drawing.Size(129, 25);
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Mostrar Saldo";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -70,11 +52,11 @@
             // 
             // Home
             // 
-            this.ClientSize = new System.Drawing.Size(1121, 653);
+            this.ClientSize = new System.Drawing.Size(1076, 597);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.accountTextbox);
             this.Name = "Home";
-            this.Text = "Home";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,9 +64,7 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox AccountTextBox;
-        private TextBox textBox1;
+        private TextBox accountTextbox;
         private Button searchButton;
     }
 }
