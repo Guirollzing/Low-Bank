@@ -1,4 +1,4 @@
-﻿namespace LowBank.Windows
+﻿namespace LowBank.Windows.Infraestruction
 {
     internal static class StringExtensions
     {
