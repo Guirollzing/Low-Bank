@@ -45,6 +45,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.transferButton = new System.Windows.Forms.Button();
             this.newClientButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // amountLabel
             // 
             this.amountLabel.AutoSize = true;
-            this.amountLabel.Location = new System.Drawing.Point(362, 248);
+            this.amountLabel.Location = new System.Drawing.Point(368, 248);
             this.amountLabel.Name = "amountLabel";
             this.amountLabel.Size = new System.Drawing.Size(42, 15);
             this.amountLabel.TabIndex = 2;
@@ -107,7 +108,7 @@
             this.panel1.Controls.Add(this.userLabel);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 303);
+            this.panel1.Size = new System.Drawing.Size(588, 294);
             this.panel1.TabIndex = 3;
             // 
             // label4
@@ -227,9 +228,19 @@
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 315);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(186, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Digite o número da conta ou CPF:";
+            // 
             // Home
             // 
             this.ClientSize = new System.Drawing.Size(612, 368);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.transferButton);
             this.Controls.Add(this.newClientButton);
             this.Controls.Add(this.accountTextbox);
@@ -264,5 +275,6 @@
         private Button transferButton;
         private Button newClientButton;
         private readonly EventHandler transferButton_VisibleChanged;
+        private Label label5;
     }
 }

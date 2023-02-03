@@ -10,7 +10,8 @@ namespace LowBank.Windows.Presentation
         //Representa o caracter de backspace
         const char BACKSPACE_CHAR = '\b';
 
-        CustomerRepository customerRepository;        
+        CustomerRepository customerRepository;    
+        Customer customer;
 
         public Home()
         {
@@ -22,43 +23,44 @@ namespace LowBank.Windows.Presentation
 
         private void AccountTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (sender is TextBoxBase campoDeTexto)
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != BACKSPACE_CHAR;
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        public void SearchButton_Click(object sender, EventArgs e)
         {
             if (!long.TryParse(accountTextbox.Text, out long accountNumber))
             {
                 return;
             }
 
-            Customer cliente = customerRepository.GetCustomerOrDefault(accountNumber);
+            customer = customerRepository.GetCustomerOrDefault(accountNumber);
 
-            if (cliente == null)
+            if (customer == null)
             {
                 return;
             }
 
             transferButton.Visible = true;
 
-            nameTextBox.Text = cliente.Name;
-            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", cliente.Telefone);
-            emailTextbox.Text = cliente.Email;
-            accountTextBox1.Text = cliente.Account.Id.ToString();
-            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", cliente.CPF);
-            ammountTextBox.Text = "R$: " + cliente.Account.Amount.ToString();
-                        
+            nameTextBox.Text = customer.Name;
+            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
+            emailTextbox.Text = customer.Email;
+            accountTextBox1.Text = customer.Account.Id.ToString();
+            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
+            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
 
         }
 
         private void transferButton_Click(object sender, EventArgs e)
         {
-            AmmountTransfer form2 = new AmmountTransfer();
+            AmmountTransfer form2 = new AmmountTransfer(customer, customerRepository);
             form2.Show();
+
+            form2.FormClosed += (s, e) => SearchButton_Click(null, null);
+
         }
 
         private void newClientButton_Click(object sender, EventArgs e)

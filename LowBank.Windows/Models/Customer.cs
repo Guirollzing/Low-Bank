@@ -29,7 +29,7 @@ namespace LowBank.Windows.Models
 
         internal static Customer Parse(string line)
         {
-            string[] infos = line.Split(",", 6);
+            string[] infos = line.Split(",", 7);
 
             //Criação do cliente
             string nome = infos[1];
@@ -40,9 +40,13 @@ namespace LowBank.Windows.Models
 
             // Criação da conta
             int conta = Convert.ToInt32(infos[0]);
-            string saldoString = infos[5].OnlyDecimalChars();
+
+            string limitString = infos[5].OnlyDecimalChars();
+            int limit = int.Parse(limitString);
+
+            string saldoString = infos[6].OnlyDecimalChars();
             decimal saldo = decimal.Parse(saldoString);
-            customer.Account = new Account(conta, saldo);
+            customer.Account = new Account(conta, saldo, limit);
 
             return customer;
         }
@@ -50,7 +54,7 @@ namespace LowBank.Windows.Models
         public override string ToString()
         {
             string validCPF = CPF.ToString().PadLeft(11, '0');
-            return $"\n{Account.Id},{Name},{validCPF},{Email},{Telefone},{Account.Amount}";
+            return $"\n{Account.Id},{Name},{validCPF},{Email},{Telefone},{Account.Amount},{Account.Limit}";
         }
     }
 }

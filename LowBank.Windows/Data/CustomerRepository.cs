@@ -56,15 +56,34 @@ namespace LowBank.Windows.Data
         {
             var novoNumeroConta = GetLastId() + 1;
 
-            Account NewAccount = new Account(novoNumeroConta, 0);
-            customer.Account = NewAccount;
+            if (customer.Account == null)
+            {
+                Account NewAccount = new Account(novoNumeroConta, 0, 0);
+                customer.Account = NewAccount;
+            }
 
             string customerString = customer.ToString();
             File.AppendAllText(DATABASE_FILE_PATH, customerString);
 
             return customer.Account.Id;
         }
+        internal void UpDate(params Customer[] customers)
+        {
+            foreach (Customer customer in customers)
+            {
+                int index = clientes.IndexOf(customer);
 
+                clientes[index] = customer;
+            }
+
+            File.Delete(DATABASE_FILE_PATH);
+            CreatDatabase();
+
+            foreach (var cliente in clientes)
+            {
+                Save(cliente);
+            }
+        }
         private void CreatDatabase()
         {
             if (File.Exists(DATABASE_FILE_PATH))
@@ -72,8 +91,8 @@ namespace LowBank.Windows.Data
 
             File.WriteAllText(DATABASE_FILE_PATH, DATABASE_HEADER);
 
-
         }
+
 
     }
 }
