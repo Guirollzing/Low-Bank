@@ -7,18 +7,18 @@ using LowBank.Windows.Models;
 
 namespace LowBank.Windows.Data
 {
-    public class CustomerRepository
+    public class FileCustomerRepository : BaseCustomerRepository
     {
         const string DATABASE_FILE_PATH = @"C:\Users\Guilherme\Documents\GitHub\Low-Bank\LowBank.Windows\dados.csv";
         const string DATABASE_HEADER = "Numero Conta, Cliente, CPF, Email, Telefone, Saldo";
         private List<Customer> clientes;
 
-        public CustomerRepository()
+        public FileCustomerRepository()
         {
             clientes = new List<Customer>();
         }
 
-        public void LoadData()
+        public override void LoadData()
         {
             CreatDatabase();
             string[] lines = File.ReadAllLines(DATABASE_FILE_PATH);
@@ -30,12 +30,12 @@ namespace LowBank.Windows.Data
             }
         }
 
-        public Customer GetCustomerOrDefault(long indentificationNumber)
+        public override Customer GetCustomerOrDefault(long indentificationNumber)
         {
             return clientes.FirstOrDefault(c => c.CPF == indentificationNumber || c.Account.Id == indentificationNumber);
         }
 
-        public bool Exists(long CPF)
+        public override bool Exists(long CPF)
         {
             return clientes.Any(c => c.CPF == CPF);
         }
@@ -52,7 +52,7 @@ namespace LowBank.Windows.Data
             return ultimoId;
         }
 
-        public int Save(Customer customer)
+        public override int Save(Customer customer)
         {
             var novoNumeroConta = GetLastId() + 1;
 
@@ -67,7 +67,7 @@ namespace LowBank.Windows.Data
 
             return customer.Account.Id;
         }
-        internal void UpDate(params Customer[] customers)
+        public override void UpDate(params Customer[] customers)
         {
             foreach (Customer customer in customers)
             {

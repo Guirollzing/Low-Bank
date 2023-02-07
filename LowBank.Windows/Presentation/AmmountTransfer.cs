@@ -16,25 +16,25 @@ namespace LowBank.Windows.Presentation
     {
         const char BACKSPACE_CHAR = '\b';
 
-        CustomerRepository customerRepository;
-        Customer customer;
-        Customer customer1;
+        BaseCustomerRepository customerRepository;
+        Customer ownerCustomer;
+        Customer transferCustomer;
 
-        public AmmountTransfer(Customer customer, CustomerRepository customerRepository)
+        public AmmountTransfer(Customer customer, BaseCustomerRepository customerRepository)
         {
             this.customerRepository = customerRepository;
-            this.customer = customer;
+            this.ownerCustomer = customer;
             InitializeComponent();
         }
 
         private void AmmountTransfer_Activated(object sender, EventArgs e)
         {
-            nameClient1.Text = customer.Name;
-            emailClient1.Text = customer.Email;
-            telefoneClient1.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
-            CPFClient1.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
-            ammountClient1.Text = "R$: " + customer.Account.Amount.ToString();
-
+            nameClient1.Text = ownerCustomer.Name;
+            emailClient1.Text = ownerCustomer.Email;
+            telefoneClient1.Text = string.Format(@"{0:+00(00)#####-####}", ownerCustomer.Telefone);
+            CPFClient1.Text = string.Format(@"{0:000\.###\.###\-##}", ownerCustomer.CPF);
+            ammountClient1.Text = "R$: " + ownerCustomer.Account.Amount.ToString();
+            limitTextBox.Text = "R$: " + ownerCustomer.Account.Limit.ToString();
 
         }
 
@@ -53,17 +53,17 @@ namespace LowBank.Windows.Presentation
                 return;
             }
 
-            customer1 = customerRepository.GetCustomerOrDefault(accountNumber);
+            transferCustomer = customerRepository.GetCustomerOrDefault(accountNumber);
 
-            if (customer == null)
+            if (ownerCustomer == null)
             {
                 return;
             }
 
-            nameCliente2.Text = customer1.Name;
-            emailClient2.Text = customer1.Email;
-            telefoneClient2.Text = string.Format(@"{0:+00(00)#####-####}", customer1.Telefone);
-            amountClient2.Text = customer1.Account.Amount.ToString();
+            nameCliente2.Text = transferCustomer.Name;
+            emailClient2.Text = transferCustomer.Email;
+            telefoneClient2.Text = string.Format(@"{0:+00(00)#####-####}", transferCustomer.Telefone);
+            amountClient2.Text = transferCustomer.Account.Amount.ToString();          
 
 
         }
@@ -72,21 +72,22 @@ namespace LowBank.Windows.Presentation
         private void transferValueButton_Click(object sender, EventArgs e)
         {
             decimal amount;
+
             if (!decimal.TryParse(textBox2.Text, out amount))
             {
                 amount = 0;
             }
 
-            bool foiEfetuado = customer.Account.Tranfer(customer1.Account, amount);
+            bool foiEfetuado = ownerCustomer.Account.Tranfer(transferCustomer.Account, amount);
 
             if (foiEfetuado)
             {
-                customerRepository.UpDate(customer, customer1);
+                customerRepository.UpDate(ownerCustomer, transferCustomer);
 
                 MessageBox.Show($"Transferencia de R$: {amount} realizada com sucesso!");
 
-                ammountClient1.Text = customer.Account.Amount.ToString();
-                amountClient2.Text = customer1.Account.Amount.ToString();
+                ammountClient1.Text = ownerCustomer.Account.Amount.ToString();
+                amountClient2.Text = transferCustomer.Account.Amount.ToString();
 
                 Close();
             }

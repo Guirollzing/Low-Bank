@@ -54,6 +54,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.limitTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +64,7 @@
             // ammountLabel2
             // 
             this.ammountLabel2.AutoSize = true;
-            this.ammountLabel2.Location = new System.Drawing.Point(123, 179);
+            this.ammountLabel2.Location = new System.Drawing.Point(3, 179);
             this.ammountLabel2.Name = "ammountLabel2";
             this.ammountLabel2.Size = new System.Drawing.Size(89, 15);
             this.ammountLabel2.TabIndex = 0;
@@ -72,9 +75,9 @@
             this.ammountClient1.BackColor = System.Drawing.SystemColors.Control;
             this.ammountClient1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ammountClient1.Enabled = false;
-            this.ammountClient1.Location = new System.Drawing.Point(123, 197);
+            this.ammountClient1.Location = new System.Drawing.Point(3, 197);
             this.ammountClient1.Name = "ammountClient1";
-            this.ammountClient1.Size = new System.Drawing.Size(117, 23);
+            this.ammountClient1.Size = new System.Drawing.Size(98, 23);
             this.ammountClient1.TabIndex = 1;
             // 
             // textBox2
@@ -107,6 +110,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.limitTextBox);
             this.panel1.Controls.Add(this.telefoneClient1);
             this.panel1.Controls.Add(this.nameClient1);
             this.panel1.Controls.Add(this.emailClient1);
@@ -203,6 +208,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.amountClient2);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.emailClient2);
@@ -222,7 +228,7 @@
             this.amountClient2.BackColor = System.Drawing.SystemColors.Control;
             this.amountClient2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.amountClient2.Enabled = false;
-            this.amountClient2.Location = new System.Drawing.Point(55, 197);
+            this.amountClient2.Location = new System.Drawing.Point(123, 197);
             this.amountClient2.Name = "amountClient2";
             this.amountClient2.Size = new System.Drawing.Size(117, 23);
             this.amountClient2.TabIndex = 12;
@@ -328,6 +334,34 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Conta a transferir:";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(123, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Valor em conta:";
+            // 
+            // limitTextBox
+            // 
+            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.limitTextBox.Enabled = false;
+            this.limitTextBox.Location = new System.Drawing.Point(113, 197);
+            this.limitTextBox.Name = "limitTextBox";
+            this.limitTextBox.Size = new System.Drawing.Size(127, 23);
+            this.limitTextBox.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(113, 179);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(132, 15);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Limite Cheque especial:";
+            // 
             // AmmountTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -382,5 +416,8 @@
         private Label label6;
         private Label label7;
         private TextBox amountClient2;
+        private Label label12;
+        private TextBox limitTextBox;
+        private Label label11;
     }
 }

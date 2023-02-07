@@ -10,12 +10,12 @@ namespace LowBank.Windows.Presentation
         //Representa o caracter de backspace
         const char BACKSPACE_CHAR = '\b';
 
-        CustomerRepository customerRepository;    
+        BaseCustomerRepository customerRepository;
         Customer customer;
 
         public Home()
         {
-            customerRepository = new CustomerRepository();
+            customerRepository = new SQLCustomerRepository();
             InitializeComponent();
             customerRepository.LoadData();
         }
@@ -51,6 +51,7 @@ namespace LowBank.Windows.Presentation
             accountTextBox1.Text = customer.Account.Id.ToString();
             CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
             ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
+            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
 
         }
 

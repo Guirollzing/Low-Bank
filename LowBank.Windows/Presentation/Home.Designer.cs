@@ -46,6 +46,8 @@
             this.transferButton = new System.Windows.Forms.Button();
             this.newClientButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.LimitLabel = new System.Windows.Forms.Label();
+            this.limitTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // amountLabel
             // 
             this.amountLabel.AutoSize = true;
-            this.amountLabel.Location = new System.Drawing.Point(368, 248);
+            this.amountLabel.Location = new System.Drawing.Point(362, 200);
             this.amountLabel.Name = "amountLabel";
             this.amountLabel.Size = new System.Drawing.Size(42, 15);
             this.amountLabel.TabIndex = 2;
@@ -94,6 +96,8 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.limitTextBox);
+            this.panel1.Controls.Add(this.LimitLabel);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -152,7 +156,7 @@
             this.ammountTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.ammountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ammountTextBox.Enabled = false;
-            this.ammountTextBox.Location = new System.Drawing.Point(362, 266);
+            this.ammountTextBox.Location = new System.Drawing.Point(362, 218);
             this.ammountTextBox.Name = "ammountTextBox";
             this.ammountTextBox.Size = new System.Drawing.Size(215, 23);
             this.ammountTextBox.TabIndex = 9;
@@ -237,6 +241,25 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Digite o número da conta ou CPF:";
             // 
+            // LimitLabel
+            // 
+            this.LimitLabel.AutoSize = true;
+            this.LimitLabel.Location = new System.Drawing.Point(362, 244);
+            this.LimitLabel.Name = "LimitLabel";
+            this.LimitLabel.Size = new System.Drawing.Size(130, 15);
+            this.LimitLabel.TabIndex = 14;
+            this.LimitLabel.Text = "Limite cheque especial:";
+            // 
+            // limitTextBox
+            // 
+            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.limitTextBox.Enabled = false;
+            this.limitTextBox.Location = new System.Drawing.Point(362, 262);
+            this.limitTextBox.Name = "limitTextBox";
+            this.limitTextBox.Size = new System.Drawing.Size(215, 23);
+            this.limitTextBox.TabIndex = 15;
+            // 
             // Home
             // 
             this.ClientSize = new System.Drawing.Size(612, 368);
@@ -276,5 +299,7 @@
         private Button newClientButton;
         private readonly EventHandler transferButton_VisibleChanged;
         private Label label5;
+        private TextBox limitTextBox;
+        private Label LimitLabel;
     }
 }

@@ -1,29 +1,36 @@
 ﻿using LowBank.Windows.Infraestruction;
+using SQLite;
 
 namespace LowBank.Windows.Models
 {
     public class Customer
     {
-        private readonly string _name;
-        private readonly string _email;
-        private readonly long _cpf;
-        private readonly long _telefone;
+        
+        public string Name { get; set; }
+        public string Email { get; set; }
 
-        public string Name => _name;
-        public string Email => _email;
-        public long CPF => _cpf;
-        public long Telefone => _telefone;
+        [PrimaryKey]
+        public long CPF { get; set; }
 
+        public long Telefone { get; set; }
 
-
+        [Ignore]
         public Account Account { get; set; }
+
+        [Indexed]
+        public int AccountId { get; set; }
 
         public Customer(string name, string email, long cpf, long telefone)
         {
-            _name = name;
-            _email = email;
-            _cpf = cpf;
-            _telefone = telefone;
+            Name = name;
+            Email = email;
+            CPF = cpf;
+            Telefone = telefone;
+        }
+
+        public Customer()
+        {
+
         }
 
 
@@ -54,7 +61,7 @@ namespace LowBank.Windows.Models
         public override string ToString()
         {
             string validCPF = CPF.ToString().PadLeft(11, '0');
-            return $"\n{Account.Id},{Name},{validCPF},{Email},{Telefone},{Account.Amount},{Account.Limit}";
+            return $"\n{Account.Id},{Name},{validCPF},{Email},{Telefone},{Account.Limit},{Account.Amount}";
         }
     }
 }
