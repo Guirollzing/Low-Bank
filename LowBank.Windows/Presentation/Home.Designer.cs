@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.accountTextbox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
             this.amountLabel = new System.Windows.Forms.Label();
             this.userLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,28 +45,9 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.transferButton = new System.Windows.Forms.Button();
             this.newClientButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.depositButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // accountTextbox
-            // 
-            this.accountTextbox.Location = new System.Drawing.Point(12, 243);
-            this.accountTextbox.Name = "accountTextbox";
-            this.accountTextbox.Size = new System.Drawing.Size(217, 23);
-            this.accountTextbox.TabIndex = 0;
-            this.accountTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(128, 272);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(101, 25);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "Carregar";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // amountLabel
             // 
@@ -233,18 +212,17 @@
             // 
             // transferButton
             // 
-            this.transferButton.Location = new System.Drawing.Point(283, 241);
+            this.transferButton.Location = new System.Drawing.Point(12, 237);
             this.transferButton.Name = "transferButton";
             this.transferButton.Size = new System.Drawing.Size(146, 25);
             this.transferButton.TabIndex = 14;
             this.transferButton.Text = "Transferir entre contas";
             this.transferButton.UseVisualStyleBackColor = true;
-            this.transferButton.Visible = false;
             this.transferButton.Click += new System.EventHandler(this.transferButton_Click);
             // 
             // newClientButton
             // 
-            this.newClientButton.Location = new System.Drawing.Point(494, 272);
+            this.newClientButton.Location = new System.Drawing.Point(494, 237);
             this.newClientButton.Name = "newClientButton";
             this.newClientButton.Size = new System.Drawing.Size(128, 25);
             this.newClientButton.TabIndex = 15;
@@ -252,36 +230,23 @@
             this.newClientButton.UseVisualStyleBackColor = true;
             this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 225);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Digite o número da conta ou CPF:";
-            // 
             // depositButton
             // 
-            this.depositButton.Location = new System.Drawing.Point(283, 274);
+            this.depositButton.Location = new System.Drawing.Point(164, 237);
             this.depositButton.Name = "depositButton";
             this.depositButton.Size = new System.Drawing.Size(146, 25);
             this.depositButton.TabIndex = 16;
             this.depositButton.Text = "Depositar  Dinheiro";
             this.depositButton.UseVisualStyleBackColor = true;
-            this.depositButton.Visible = false;
             this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
             // Home
             // 
             this.ClientSize = new System.Drawing.Size(634, 309);
             this.Controls.Add(this.depositButton);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.transferButton);
             this.Controls.Add(this.newClientButton);
-            this.Controls.Add(this.accountTextbox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.searchButton);
             this.Name = "Home";
             this.Text = "LowBank ";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
@@ -293,9 +258,6 @@
         }
 
         #endregion
-
-        private TextBox accountTextbox;
-        private Button searchButton;
         private Label amountLabel;
         private Label userLabel;
         private Panel panel1;
@@ -312,7 +274,6 @@
         private Button transferButton;
         private Button newClientButton;
         private readonly EventHandler transferButton_VisibleChanged;
-        private Label label5;
         private TextBox limitTextBox;
         private Label LimitLabel;
         private Button depositButton;

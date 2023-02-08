@@ -13,11 +13,20 @@ namespace LowBank.Windows.Presentation
         BaseCustomerRepository customerRepository;
         Customer customer;
 
-        public Home()
+        public Home(Customer customer, BaseCustomerRepository customerRepository)
         {
-            customerRepository = new SQLCustomerRepository();
             InitializeComponent();
-            customerRepository.LoadData();
+
+            this.customerRepository = customerRepository;
+            this.customer = customer;
+
+            nameTextBox.Text = customer.Name;
+            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
+            emailTextbox.Text = customer.Email;
+            accountTextBox1.Text = customer.Account.Id.ToString();
+            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
+            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
+            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
         }
 
 
@@ -29,39 +38,13 @@ namespace LowBank.Windows.Presentation
             }
         }
 
-        public void SearchButton_Click(object sender, EventArgs e)
-        {
-            if (!long.TryParse(accountTextbox.Text, out long accountNumber))
-            {
-                return;
-            }
-
-            customer = customerRepository.GetCustomerOrDefault(accountNumber);
-
-            if (customer == null)
-            {
-                return;
-            }
-
-            transferButton.Visible = true;
-            depositButton.Visible = true;
-
-            nameTextBox.Text = customer.Name;
-            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
-            emailTextbox.Text = customer.Email;
-            accountTextBox1.Text = customer.Account.Id.ToString();
-            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
-            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
-            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
-
-        }
 
         private void transferButton_Click(object sender, EventArgs e)
         {
             AmmountTransfer form2 = new AmmountTransfer(customer, customerRepository);
             form2.Show();
 
-            form2.FormClosed += (s, e) => SearchButton_Click(null, null);
+            form2.FormClosed += (s, e) => customerRepository.LoadData();
 
         }
 
