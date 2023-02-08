@@ -80,5 +80,10 @@ namespace LowBank.Windows.Presentation
             amountDeposityForm.Show();
         }
 
+        private void AlterarLimite_Click(object sender, EventArgs e)
+        {
+            var limitAnalysisForm = new LimitAnalysis(customer, customerRepository);
+            limitAnalysisForm.Show();
+        }
     }
 }
