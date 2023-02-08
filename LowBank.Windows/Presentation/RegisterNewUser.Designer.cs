@@ -167,6 +167,7 @@
             this.Controls.Add(this.CPFErrorLabel);
             this.Controls.Add(this.nameErrorLabel);
             this.Name = "RegisterNewUser";
+            this.Text = "Registro de novo usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

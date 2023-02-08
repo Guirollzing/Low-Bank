@@ -34,5 +34,14 @@ namespace LowBank.Windows.Models
             return true;
         }
 
+        public bool Deposity(Account destiny, decimal amountDeposity)
+        {
+            if (Amount < 0)
+                return false;
+
+            this.Amount += amountDeposity;
+            return true;
+        }
+
     }
 }

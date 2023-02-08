@@ -33,6 +33,8 @@
             this.amountLabel = new System.Windows.Forms.Label();
             this.userLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.limitTextBox = new System.Windows.Forms.TextBox();
+            this.LimitLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,14 +48,13 @@
             this.transferButton = new System.Windows.Forms.Button();
             this.newClientButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.LimitLabel = new System.Windows.Forms.Label();
-            this.limitTextBox = new System.Windows.Forms.TextBox();
+            this.depositButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // accountTextbox
             // 
-            this.accountTextbox.Location = new System.Drawing.Point(12, 333);
+            this.accountTextbox.Location = new System.Drawing.Point(12, 243);
             this.accountTextbox.Name = "accountTextbox";
             this.accountTextbox.Size = new System.Drawing.Size(217, 23);
             this.accountTextbox.TabIndex = 0;
@@ -61,7 +62,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(235, 333);
+            this.searchButton.Location = new System.Drawing.Point(128, 272);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(101, 25);
             this.searchButton.TabIndex = 1;
@@ -72,7 +73,7 @@
             // amountLabel
             // 
             this.amountLabel.AutoSize = true;
-            this.amountLabel.Location = new System.Drawing.Point(362, 200);
+            this.amountLabel.Location = new System.Drawing.Point(362, 145);
             this.amountLabel.Name = "amountLabel";
             this.amountLabel.Size = new System.Drawing.Size(42, 15);
             this.amountLabel.TabIndex = 2;
@@ -112,13 +113,32 @@
             this.panel1.Controls.Add(this.userLabel);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 294);
+            this.panel1.Size = new System.Drawing.Size(610, 210);
             this.panel1.TabIndex = 3;
+            // 
+            // limitTextBox
+            // 
+            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.limitTextBox.Enabled = false;
+            this.limitTextBox.Location = new System.Drawing.Point(362, 119);
+            this.limitTextBox.Name = "limitTextBox";
+            this.limitTextBox.Size = new System.Drawing.Size(234, 23);
+            this.limitTextBox.TabIndex = 15;
+            // 
+            // LimitLabel
+            // 
+            this.LimitLabel.AutoSize = true;
+            this.LimitLabel.Location = new System.Drawing.Point(362, 101);
+            this.LimitLabel.Name = "LimitLabel";
+            this.LimitLabel.Size = new System.Drawing.Size(130, 15);
+            this.LimitLabel.TabIndex = 14;
+            this.LimitLabel.Text = "Limite cheque especial:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 144);
+            this.label4.Location = new System.Drawing.Point(12, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 13;
@@ -127,7 +147,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(374, 78);
+            this.label3.Location = new System.Drawing.Point(374, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 12;
@@ -136,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
+            this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 11;
@@ -156,9 +176,9 @@
             this.ammountTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.ammountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ammountTextBox.Enabled = false;
-            this.ammountTextBox.Location = new System.Drawing.Point(362, 218);
+            this.ammountTextBox.Location = new System.Drawing.Point(362, 163);
             this.ammountTextBox.Name = "ammountTextBox";
-            this.ammountTextBox.Size = new System.Drawing.Size(215, 23);
+            this.ammountTextBox.Size = new System.Drawing.Size(234, 23);
             this.ammountTextBox.TabIndex = 9;
             // 
             // emailTextbox
@@ -166,7 +186,7 @@
             this.emailTextbox.BackColor = System.Drawing.SystemColors.Control;
             this.emailTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailTextbox.Enabled = false;
-            this.emailTextbox.Location = new System.Drawing.Point(12, 96);
+            this.emailTextbox.Location = new System.Drawing.Point(12, 75);
             this.emailTextbox.Name = "emailTextbox";
             this.emailTextbox.Size = new System.Drawing.Size(356, 23);
             this.emailTextbox.TabIndex = 8;
@@ -176,7 +196,7 @@
             this.CPFTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.CPFTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CPFTextBox.Enabled = false;
-            this.CPFTextBox.Location = new System.Drawing.Point(12, 162);
+            this.CPFTextBox.Location = new System.Drawing.Point(12, 119);
             this.CPFTextBox.Name = "CPFTextBox";
             this.CPFTextBox.Size = new System.Drawing.Size(204, 23);
             this.CPFTextBox.TabIndex = 7;
@@ -186,9 +206,9 @@
             this.accountTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.accountTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.accountTextBox1.Enabled = false;
-            this.accountTextBox1.Location = new System.Drawing.Point(374, 96);
+            this.accountTextBox1.Location = new System.Drawing.Point(374, 75);
             this.accountTextBox1.Name = "accountTextBox1";
-            this.accountTextBox1.Size = new System.Drawing.Size(203, 23);
+            this.accountTextBox1.Size = new System.Drawing.Size(222, 23);
             this.accountTextBox1.TabIndex = 6;
             // 
             // telefoneTextBox
@@ -198,7 +218,7 @@
             this.telefoneTextBox.Enabled = false;
             this.telefoneTextBox.Location = new System.Drawing.Point(339, 31);
             this.telefoneTextBox.Name = "telefoneTextBox";
-            this.telefoneTextBox.Size = new System.Drawing.Size(238, 23);
+            this.telefoneTextBox.Size = new System.Drawing.Size(257, 23);
             this.telefoneTextBox.TabIndex = 5;
             // 
             // nameTextBox
@@ -213,18 +233,18 @@
             // 
             // transferButton
             // 
-            this.transferButton.Location = new System.Drawing.Point(342, 333);
+            this.transferButton.Location = new System.Drawing.Point(283, 241);
             this.transferButton.Name = "transferButton";
-            this.transferButton.Size = new System.Drawing.Size(124, 25);
+            this.transferButton.Size = new System.Drawing.Size(146, 25);
             this.transferButton.TabIndex = 14;
-            this.transferButton.Text = "Transferir";
+            this.transferButton.Text = "Transferir entre contas";
             this.transferButton.UseVisualStyleBackColor = true;
             this.transferButton.Visible = false;
             this.transferButton.Click += new System.EventHandler(this.transferButton_Click);
             // 
             // newClientButton
             // 
-            this.newClientButton.Location = new System.Drawing.Point(472, 333);
+            this.newClientButton.Location = new System.Drawing.Point(494, 272);
             this.newClientButton.Name = "newClientButton";
             this.newClientButton.Size = new System.Drawing.Size(128, 25);
             this.newClientButton.TabIndex = 15;
@@ -235,34 +255,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 315);
+            this.label5.Location = new System.Drawing.Point(12, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(186, 15);
             this.label5.TabIndex = 14;
             this.label5.Text = "Digite o número da conta ou CPF:";
             // 
-            // LimitLabel
+            // depositButton
             // 
-            this.LimitLabel.AutoSize = true;
-            this.LimitLabel.Location = new System.Drawing.Point(362, 244);
-            this.LimitLabel.Name = "LimitLabel";
-            this.LimitLabel.Size = new System.Drawing.Size(130, 15);
-            this.LimitLabel.TabIndex = 14;
-            this.LimitLabel.Text = "Limite cheque especial:";
-            // 
-            // limitTextBox
-            // 
-            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.limitTextBox.Enabled = false;
-            this.limitTextBox.Location = new System.Drawing.Point(362, 262);
-            this.limitTextBox.Name = "limitTextBox";
-            this.limitTextBox.Size = new System.Drawing.Size(215, 23);
-            this.limitTextBox.TabIndex = 15;
+            this.depositButton.Location = new System.Drawing.Point(283, 274);
+            this.depositButton.Name = "depositButton";
+            this.depositButton.Size = new System.Drawing.Size(146, 25);
+            this.depositButton.TabIndex = 16;
+            this.depositButton.Text = "Depositar  Dinheiro";
+            this.depositButton.UseVisualStyleBackColor = true;
+            this.depositButton.Visible = false;
+            this.depositButton.Click += new System.EventHandler(this.depositButton_Click);
             // 
             // Home
             // 
-            this.ClientSize = new System.Drawing.Size(612, 368);
+            this.ClientSize = new System.Drawing.Size(634, 309);
+            this.Controls.Add(this.depositButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.transferButton);
             this.Controls.Add(this.newClientButton);
@@ -270,6 +283,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.searchButton);
             this.Name = "Home";
+            this.Text = "LowBank ";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -301,5 +315,6 @@
         private Label label5;
         private TextBox limitTextBox;
         private Label LimitLabel;
+        private Button depositButton;
     }
 }

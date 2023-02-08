@@ -34,6 +34,8 @@
             this.transferValue = new System.Windows.Forms.Label();
             this.transferValueButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.limitTextBox = new System.Windows.Forms.TextBox();
             this.telefoneClient1 = new System.Windows.Forms.TextBox();
             this.nameClient1 = new System.Windows.Forms.TextBox();
             this.emailClient1 = new System.Windows.Forms.TextBox();
@@ -43,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.amountClient2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.emailClient2 = new System.Windows.Forms.TextBox();
@@ -54,9 +57,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.limitTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(246, 225);
             this.panel1.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(113, 179);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(132, 15);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Limite Cheque especial:";
+            // 
+            // limitTextBox
+            // 
+            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.limitTextBox.Enabled = false;
+            this.limitTextBox.Location = new System.Drawing.Point(113, 197);
+            this.limitTextBox.Name = "limitTextBox";
+            this.limitTextBox.Size = new System.Drawing.Size(127, 23);
+            this.limitTextBox.TabIndex = 10;
             // 
             // telefoneClient1
             // 
@@ -222,6 +241,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(246, 225);
             this.panel2.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(123, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Valor em conta:";
             // 
             // amountClient2
             // 
@@ -334,34 +362,6 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Conta a transferir:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(123, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 15);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Valor em conta:";
-            // 
-            // limitTextBox
-            // 
-            this.limitTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.limitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.limitTextBox.Enabled = false;
-            this.limitTextBox.Location = new System.Drawing.Point(113, 197);
-            this.limitTextBox.Name = "limitTextBox";
-            this.limitTextBox.Size = new System.Drawing.Size(127, 23);
-            this.limitTextBox.TabIndex = 10;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(113, 179);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(132, 15);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Limite Cheque especial:";
-            // 
             // AmmountTransfer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -377,7 +377,7 @@
             this.MaximumSize = new System.Drawing.Size(550, 350);
             this.MinimumSize = new System.Drawing.Size(550, 350);
             this.Name = "AmmountTransfer";
-            this.Text = "AmmountTransfer";
+            this.Text = "Transferencia entre contas";
             this.Activated += new System.EventHandler(this.AmmountTransfer_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

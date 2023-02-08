@@ -44,6 +44,7 @@ namespace LowBank.Windows.Presentation
             }
 
             transferButton.Visible = true;
+            depositButton.Visible = true;
 
             nameTextBox.Text = customer.Name;
             telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
@@ -73,6 +74,11 @@ namespace LowBank.Windows.Presentation
             
         }
 
+        private void depositButton_Click(object sender, EventArgs e)
+        {
+            var amountDeposityForm = new deposityForm(customer, customerRepository);
+            amountDeposityForm.Show();
+        }
 
     }
 }
