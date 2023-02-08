@@ -57,7 +57,7 @@
             // 
             this.accountTextbox.Location = new System.Drawing.Point(12, 243);
             this.accountTextbox.Name = "accountTextbox";
-            this.accountTextbox.Size = new System.Drawing.Size(217, 25);
+            this.accountTextbox.Size = new System.Drawing.Size(217, 23);
             this.accountTextbox.TabIndex = 0;
             this.accountTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AccountTextbox_KeyPress);
             // 
