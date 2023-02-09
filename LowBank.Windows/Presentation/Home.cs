@@ -19,16 +19,8 @@ namespace LowBank.Windows.Presentation
 
             this.customerRepository = customerRepository;
             this.customer = customer;
-
-            nameTextBox.Text = customer.Name;
-            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
-            emailTextbox.Text = customer.Email;
-            accountTextBox1.Text = customer.Account.Id.ToString();
-            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
-            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
-            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
+            FillFields();
         }
-
 
         private void AccountTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -42,31 +34,50 @@ namespace LowBank.Windows.Presentation
         private void transferButton_Click(object sender, EventArgs e)
         {
             AmmountTransfer form2 = new AmmountTransfer(customer, customerRepository);
+            form2.FormClosed += ReloadHome;
+
             form2.Show();
-
-            form2.FormClosed += (s, e) => customerRepository.LoadData();
-
         }
 
         private void newClientButton_Click(object sender, EventArgs e)
         {
             var registrationForm = new RegisterNewUser(customerRepository);
-            registrationForm.Show();
-
-            registrationForm.FormClosed += (s, e) => customerRepository.LoadData();
+            registrationForm.FormClosed += ReloadHome;
             
+            registrationForm.Show();
         }
 
         private void depositButton_Click(object sender, EventArgs e)
         {
             var amountDeposityForm = new deposityForm(customer, customerRepository);
+            amountDeposityForm.FormClosed += ReloadHome;
+
             amountDeposityForm.Show();
         }
 
         private void AlterarLimite_Click(object sender, EventArgs e)
         {
             var limitAnalysisForm = new LimitAnalysis(customer, customerRepository);
+            limitAnalysisForm.FormClosed += ReloadHome;
+
             limitAnalysisForm.Show();
+        }
+
+        private void ReloadHome(object? sender, FormClosedEventArgs e)
+        {
+            customerRepository.LoadData();
+            FillFields();
+        }
+
+        private void FillFields()
+        {
+            nameTextBox.Text = customer.Name;
+            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
+            emailTextbox.Text = customer.Email;
+            accountTextBox1.Text = customer.Account.Id.ToString();
+            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
+            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
+            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
         }
     }
 }

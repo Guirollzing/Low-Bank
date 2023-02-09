@@ -1,14 +1,5 @@
 ﻿using LowBank.Windows.Data;
 using LowBank.Windows.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LowBank.Windows.Presentation
 {
@@ -44,9 +35,10 @@ namespace LowBank.Windows.Presentation
             if (result > 0)
             {
                 // Atualizar o banco de dados se necessario
-                _customer.Account.Limit = result;
+                var oldLimit = _customer.Account.Limit;
+                _customer.Account.Limit += result;
                 _repository.UpDate(_customer);
-                MessageBox.Show($"Limite de R$ {result} aprovado!", "Análise de limite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Seu limite foi alterado de R$ {oldLimit} para R$ {_customer.Account.Limit}!", "Análise de limite", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

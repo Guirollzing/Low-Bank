@@ -93,7 +93,7 @@
             this.panel1.Controls.Add(this.userLabel);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 210);
+            this.panel1.Size = new System.Drawing.Size(610, 193);
             this.panel1.TabIndex = 3;
             // 
             // limitTextBox
@@ -244,7 +244,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(494, 241);
+            this.button1.Location = new System.Drawing.Point(360, 236);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 25);
             this.button1.TabIndex = 17;
@@ -254,7 +254,7 @@
             // 
             // Home
             // 
-            this.ClientSize = new System.Drawing.Size(634, 309);
+            this.ClientSize = new System.Drawing.Size(634, 273);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.depositButton);
             this.Controls.Add(this.transferButton);
