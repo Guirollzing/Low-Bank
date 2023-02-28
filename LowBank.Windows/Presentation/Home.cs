@@ -13,8 +13,8 @@ namespace LowBank.Windows.Presentation
         BaseCustomerRepository customerRepository;
         Customer customer;
 
-        public Home(Customer customer, BaseCustomerRepository customerRepository)
-        {
+        public Home(Customer customer, BaseCustomerRepository customerRepository) 
+        {            
             InitializeComponent();
 
             this.customerRepository = customerRepository;

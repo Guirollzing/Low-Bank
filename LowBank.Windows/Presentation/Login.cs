@@ -17,11 +17,11 @@ namespace LowBank.Windows.Presentation
         const char BACKSPACE_CHAR = '\b';
         BaseCustomerRepository customerRepository;
         Customer customer;
+
         public Login()
         {
-            customerRepository = new SQLCustomerRepository();
+            customerRepository = new ApiCustomerRepository();
             InitializeComponent();
-            customerRepository.LoadData();
             
         }
 
@@ -51,6 +51,13 @@ namespace LowBank.Windows.Presentation
             home.Show();
 
             home.FormClosed += (s, e) => customerRepository.LoadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var registrationForm = new RegisterNewUser(customerRepository);
+
+            registrationForm.Show();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace LowBank.Windows.Models
 
 
         public decimal Amount { get; set; }
-        public decimal Limit { get; set; }
+        public int Limit { get; set; }
 
         public Account(int id, decimal amount, int limit)
         {
