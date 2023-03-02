@@ -41,6 +41,8 @@
             this.emailErrorLabel = new System.Windows.Forms.Label();
             this.CPFErrorLabel = new System.Windows.Forms.Label();
             this.telefoneErrorLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PassWordTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // registerButton
@@ -56,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 17);
+            this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 83);
+            this.label2.Location = new System.Drawing.Point(8, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 2;
@@ -74,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 17);
+            this.label3.Location = new System.Drawing.Point(355, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 3;
@@ -91,14 +93,14 @@
             // 
             // emailRegister
             // 
-            this.emailRegister.Location = new System.Drawing.Point(8, 101);
+            this.emailRegister.Location = new System.Drawing.Point(8, 94);
             this.emailRegister.Name = "emailRegister";
             this.emailRegister.Size = new System.Drawing.Size(275, 23);
             this.emailRegister.TabIndex = 5;
             // 
             // nameRegister
             // 
-            this.nameRegister.Location = new System.Drawing.Point(8, 35);
+            this.nameRegister.Location = new System.Drawing.Point(8, 27);
             this.nameRegister.Name = "nameRegister";
             this.nameRegister.Size = new System.Drawing.Size(275, 23);
             this.nameRegister.TabIndex = 6;
@@ -120,7 +122,7 @@
             // 
             // nameErrorLabel
             // 
-            this.nameErrorLabel.Location = new System.Drawing.Point(8, 60);
+            this.nameErrorLabel.Location = new System.Drawing.Point(8, 53);
             this.nameErrorLabel.Name = "nameErrorLabel";
             this.nameErrorLabel.Size = new System.Drawing.Size(139, 23);
             this.nameErrorLabel.TabIndex = 0;
@@ -128,7 +130,7 @@
             // 
             // emailErrorLabel
             // 
-            this.emailErrorLabel.Location = new System.Drawing.Point(8, 127);
+            this.emailErrorLabel.Location = new System.Drawing.Point(8, 122);
             this.emailErrorLabel.Name = "emailErrorLabel";
             this.emailErrorLabel.Size = new System.Drawing.Size(100, 23);
             this.emailErrorLabel.TabIndex = 0;
@@ -150,9 +152,27 @@
             this.telefoneErrorLabel.TabIndex = 0;
             this.telefoneErrorLabel.Text = "Telefone Obrigatório";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 144);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Senha:";
+            // 
+            // PassWordTextBox
+            // 
+            this.PassWordTextBox.Location = new System.Drawing.Point(12, 162);
+            this.PassWordTextBox.Name = "PassWordTextBox";
+            this.PassWordTextBox.Size = new System.Drawing.Size(271, 23);
+            this.PassWordTextBox.TabIndex = 9;
+            // 
             // RegisterNewUser
             // 
             this.ClientSize = new System.Drawing.Size(534, 197);
+            this.Controls.Add(this.PassWordTextBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -188,5 +208,7 @@
         private Label emailErrorLabel;
         private Label CPFErrorLabel;
         private Label telefoneErrorLabel;
+        private Label label5;
+        private TextBox PassWordTextBox;
     }
 }

@@ -16,7 +16,6 @@ namespace LowBank.Windows.Data
         {
             var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "LowBankData.db");
             _connection = new SQLiteConnection(databasePath);
-
         }
 
         public override void LoadData()
@@ -53,6 +52,7 @@ namespace LowBank.Windows.Data
             int contasAlteradas = _connection.UpdateAll(accounts);
         }
 
+
         public override int Save(Customer customer)
         {
             
@@ -69,6 +69,10 @@ namespace LowBank.Windows.Data
             _connection.Insert(customer);
 
             return customer.AccountId;
+        }
+        public override bool Login(LoginModel loginModel)
+        {
+            return true;
         }
     }
 }

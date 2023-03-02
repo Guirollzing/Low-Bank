@@ -31,6 +31,7 @@ namespace LowBank.Windows.Presentation
             isValid &= IsValid(emailRegister.Text, nameErrorLabel);
             isValid &= IsValid(telefoneRegister.Text, nameErrorLabel);
             isValid &= IsValid(CPFRegister.Text, nameErrorLabel);
+            isValid &= IsValid(PassWordTextBox.Text, nameErrorLabel);
                         
             if (!isValid)
             {
@@ -54,7 +55,7 @@ namespace LowBank.Windows.Presentation
 
             long telefone = Convert.ToInt64(telefoneRegister.Text);
 
-            Customer newCustomer = new Customer(nameRegister.Text, emailRegister.Text, cpf, telefone);
+            Customer newCustomer = new Customer(nameRegister.Text, emailRegister.Text, cpf, telefone, PassWordTextBox.Text);
             int novoNumeroConta = customerRepository.Save(newCustomer);
 
             this.Close();

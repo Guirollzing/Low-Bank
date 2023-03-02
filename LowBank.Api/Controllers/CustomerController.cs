@@ -48,8 +48,11 @@ namespace LowBank.Api.Controllers
         }
 
         [HttpGet("GetCustomerOrDefault/{accountId}", Name = "GetCustomerOrDefault")]
-        public async Task<ActionResult<Customer>> GetCustomerOrDefault([Required] long accountId)
+        public async Task<ActionResult<Customer>> GetCustomerOrDefault([FromHeader(Name = "Authentication")] string token, [Required] long accountId)
         {
+            if (!IsValid(token))
+                return Unauthorized();
+
             var query = await _collection.FindAsync(c => c.CPF == accountId || c.Account.Id == accountId);
             var customer = query.FirstOrDefault();
 
@@ -60,8 +63,11 @@ namespace LowBank.Api.Controllers
         }
 
         [HttpPatch(Name = "Update")]
-        public async Task<IActionResult> Update([FromBody] Customer[] customers)
+        public async Task<IActionResult> Update([FromHeader(Name = "Authentication")] string token, [FromBody] Customer[] customers)
         {
+            if (!IsValid(token))
+                return Unauthorized();
+
             foreach (var customer in customers)
             {
                 
@@ -69,6 +75,21 @@ namespace LowBank.Api.Controllers
             }
 
             return Ok();            
+        }
+
+        private bool IsValid(string acessToken)
+        {
+            if (string.IsNullOrWhiteSpace(acessToken))
+            {
+                return false;
+            }
+
+            if (!AuthenticationController.AcessTokens.Contains(acessToken))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 

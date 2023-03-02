@@ -6,6 +6,7 @@ namespace LowBank.Api.Models
     {
         [BsonId]
         public long CPF { get; set; }
+        public string Password { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }        
         public long Telefone { get; set; }
