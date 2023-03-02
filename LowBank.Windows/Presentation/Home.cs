@@ -10,15 +10,14 @@ namespace LowBank.Windows.Presentation
         //Representa o caracter de backspace
         const char BACKSPACE_CHAR = '\b';
 
-        BaseCustomerRepository customerRepository;
-        Customer customer;
+        private BaseCustomerRepository customerRepository;
+        private Customer currentCustomer;
 
-        public Home(Customer customer, BaseCustomerRepository customerRepository)
+        public Home(BaseCustomerRepository customerRepository, Customer currentCustomer)
         {
-            InitializeComponent();
-
+            this.currentCustomer = currentCustomer;
             this.customerRepository = customerRepository;
-            this.customer = customer;
+            InitializeComponent();
             FillFields();
         }
 
@@ -33,7 +32,7 @@ namespace LowBank.Windows.Presentation
 
         private void transferButton_Click(object sender, EventArgs e)
         {
-            AmmountTransfer form2 = new AmmountTransfer(customer, customerRepository);
+            AmmountTransfer form2 = new AmmountTransfer(currentCustomer, customerRepository);
             form2.FormClosed += ReloadHome;
 
             form2.Show();
@@ -49,7 +48,7 @@ namespace LowBank.Windows.Presentation
 
         private void depositButton_Click(object sender, EventArgs e)
         {
-            var amountDeposityForm = new deposityForm(customer, customerRepository);
+            var amountDeposityForm = new deposityForm(currentCustomer, customerRepository);
             amountDeposityForm.FormClosed += ReloadHome;
 
             amountDeposityForm.Show();
@@ -57,7 +56,7 @@ namespace LowBank.Windows.Presentation
 
         private void AlterarLimite_Click(object sender, EventArgs e)
         {
-            var limitAnalysisForm = new LimitAnalysis(customer, customerRepository);
+            var limitAnalysisForm = new LimitAnalysis(currentCustomer, customerRepository);
             limitAnalysisForm.FormClosed += ReloadHome;
 
             limitAnalysisForm.Show();
@@ -71,13 +70,13 @@ namespace LowBank.Windows.Presentation
 
         private void FillFields()
         {
-            nameTextBox.Text = customer.Name;
-            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", customer.Telefone);
-            emailTextbox.Text = customer.Email;
-            accountTextBox1.Text = customer.Account.Id.ToString();
-            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", customer.CPF);
-            ammountTextBox.Text = "R$: " + customer.Account.Amount.ToString();
-            limitTextBox.Text = "R$: " + customer.Account.Limit.ToString();
+            nameTextBox.Text = currentCustomer.Name;
+            telefoneTextBox.Text = string.Format(@"{0:+00(00)#####-####}", currentCustomer.Telefone);
+            emailTextbox.Text = currentCustomer.Email;
+            accountTextBox1.Text = currentCustomer.Account.Id.ToString();
+            CPFTextBox.Text = string.Format(@"{0:000\.###\.###\-##}", currentCustomer.CPF);
+            ammountTextBox.Text = "R$: " + currentCustomer.Account.Amount.ToString();
+            limitTextBox.Text = "R$: " + currentCustomer.Account.Limit.ToString();
         }
     }
 }

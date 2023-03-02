@@ -40,18 +40,6 @@ namespace LowBank.Windows.Data
             return clientes.Any(c => c.CPF == CPF);
         }
 
-        public int GetLastId()
-        {
-            var ultimoId = 0;
-
-            if (clientes.Count > 0)
-            {
-                var ultimoCliente = clientes.Last();
-                ultimoId = ultimoCliente.Account.Id;
-            }
-            return ultimoId;
-        }
-
         public override int Save(Customer customer)
         {
             var novoNumeroConta = GetLastId() + 1;
@@ -84,6 +72,11 @@ namespace LowBank.Windows.Data
                 Save(cliente);
             }
         }
+
+        public override bool Login(LoginModel loginModel)
+        {
+            return true;
+        }
         private void CreatDatabase()
         {
             if (File.Exists(DATABASE_FILE_PATH))
@@ -93,6 +86,17 @@ namespace LowBank.Windows.Data
 
         }
 
+        public int GetLastId()
+        {
+            var ultimoId = 0;
+
+            if (clientes.Count > 0)
+            {
+                var ultimoCliente = clientes.Last();
+                ultimoId = ultimoCliente.Account.Id;
+            }
+            return ultimoId;
+        }
 
     }
 }
