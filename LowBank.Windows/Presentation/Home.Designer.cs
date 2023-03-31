@@ -44,7 +44,6 @@
             this.telefoneTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.transferButton = new System.Windows.Forms.Button();
-            this.newClientButton = new System.Windows.Forms.Button();
             this.depositButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -55,7 +54,7 @@
             this.amountLabel.AutoSize = true;
             this.amountLabel.Location = new System.Drawing.Point(362, 145);
             this.amountLabel.Name = "amountLabel";
-            this.amountLabel.Size = new System.Drawing.Size(48, 17);
+            this.amountLabel.Size = new System.Drawing.Size(42, 15);
             this.amountLabel.TabIndex = 2;
             this.amountLabel.Text = "Saldo: ";
             // 
@@ -64,7 +63,7 @@
             this.userLabel.AutoSize = true;
             this.userLabel.Location = new System.Drawing.Point(12, 13);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(51, 17);
+            this.userLabel.Size = new System.Drawing.Size(46, 15);
             this.userLabel.TabIndex = 3;
             this.userLabel.Text = "Nome: ";
             // 
@@ -103,7 +102,7 @@
             this.limitTextBox.Enabled = false;
             this.limitTextBox.Location = new System.Drawing.Point(362, 119);
             this.limitTextBox.Name = "limitTextBox";
-            this.limitTextBox.Size = new System.Drawing.Size(234, 25);
+            this.limitTextBox.Size = new System.Drawing.Size(234, 23);
             this.limitTextBox.TabIndex = 15;
             // 
             // LimitLabel
@@ -111,7 +110,7 @@
             this.LimitLabel.AutoSize = true;
             this.LimitLabel.Location = new System.Drawing.Point(362, 101);
             this.LimitLabel.Name = "LimitLabel";
-            this.LimitLabel.Size = new System.Drawing.Size(142, 17);
+            this.LimitLabel.Size = new System.Drawing.Size(130, 15);
             this.LimitLabel.TabIndex = 14;
             this.LimitLabel.Text = "Limite cheque especial:";
             // 
@@ -120,7 +119,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 17);
+            this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 13;
             this.label4.Text = "CPF:";
             // 
@@ -129,7 +128,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(374, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 12;
             this.label3.Text = "Conta:";
             // 
@@ -138,7 +137,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.Size = new System.Drawing.Size(39, 15);
             this.label2.TabIndex = 11;
             this.label2.Text = "Email:";
             // 
@@ -147,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(339, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 10;
             this.label1.Text = "Telefone: ";
             // 
@@ -158,7 +157,7 @@
             this.ammountTextBox.Enabled = false;
             this.ammountTextBox.Location = new System.Drawing.Point(362, 163);
             this.ammountTextBox.Name = "ammountTextBox";
-            this.ammountTextBox.Size = new System.Drawing.Size(234, 25);
+            this.ammountTextBox.Size = new System.Drawing.Size(234, 23);
             this.ammountTextBox.TabIndex = 9;
             // 
             // emailTextbox
@@ -168,7 +167,7 @@
             this.emailTextbox.Enabled = false;
             this.emailTextbox.Location = new System.Drawing.Point(12, 75);
             this.emailTextbox.Name = "emailTextbox";
-            this.emailTextbox.Size = new System.Drawing.Size(356, 25);
+            this.emailTextbox.Size = new System.Drawing.Size(356, 23);
             this.emailTextbox.TabIndex = 8;
             // 
             // CPFTextBox
@@ -178,7 +177,7 @@
             this.CPFTextBox.Enabled = false;
             this.CPFTextBox.Location = new System.Drawing.Point(12, 119);
             this.CPFTextBox.Name = "CPFTextBox";
-            this.CPFTextBox.Size = new System.Drawing.Size(204, 25);
+            this.CPFTextBox.Size = new System.Drawing.Size(204, 23);
             this.CPFTextBox.TabIndex = 7;
             // 
             // accountTextBox1
@@ -188,7 +187,7 @@
             this.accountTextBox1.Enabled = false;
             this.accountTextBox1.Location = new System.Drawing.Point(374, 75);
             this.accountTextBox1.Name = "accountTextBox1";
-            this.accountTextBox1.Size = new System.Drawing.Size(222, 25);
+            this.accountTextBox1.Size = new System.Drawing.Size(222, 23);
             this.accountTextBox1.TabIndex = 6;
             // 
             // telefoneTextBox
@@ -198,7 +197,7 @@
             this.telefoneTextBox.Enabled = false;
             this.telefoneTextBox.Location = new System.Drawing.Point(339, 31);
             this.telefoneTextBox.Name = "telefoneTextBox";
-            this.telefoneTextBox.Size = new System.Drawing.Size(257, 25);
+            this.telefoneTextBox.Size = new System.Drawing.Size(257, 23);
             this.telefoneTextBox.TabIndex = 5;
             // 
             // nameTextBox
@@ -208,7 +207,7 @@
             this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(12, 31);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(321, 25);
+            this.nameTextBox.Size = new System.Drawing.Size(321, 23);
             this.nameTextBox.TabIndex = 4;
             // 
             // transferButton
@@ -220,16 +219,6 @@
             this.transferButton.Text = "Transferir entre contas";
             this.transferButton.UseVisualStyleBackColor = true;
             this.transferButton.Click += new System.EventHandler(this.transferButton_Click);
-            // 
-            // newClientButton
-            // 
-            this.newClientButton.Location = new System.Drawing.Point(494, 237);
-            this.newClientButton.Name = "newClientButton";
-            this.newClientButton.Size = new System.Drawing.Size(128, 25);
-            this.newClientButton.TabIndex = 15;
-            this.newClientButton.Text = "Cadastrar Cliente";
-            this.newClientButton.UseVisualStyleBackColor = true;
-            this.newClientButton.Click += new System.EventHandler(this.newClientButton_Click);
             // 
             // depositButton
             // 
@@ -244,7 +233,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(360, 236);
+            this.button1.Location = new System.Drawing.Point(316, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 25);
             this.button1.TabIndex = 17;
@@ -258,7 +247,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.depositButton);
             this.Controls.Add(this.transferButton);
-            this.Controls.Add(this.newClientButton);
             this.Controls.Add(this.panel1);
             this.Name = "Home";
             this.Text = "LowBank ";
@@ -285,7 +273,6 @@
         private Label label2;
         private Label label1;
         private Button transferButton;
-        private Button newClientButton;
         private readonly EventHandler transferButton_VisibleChanged;
         private TextBox limitTextBox;
         private Label LimitLabel;

@@ -76,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(355, 17);
+            this.label3.Location = new System.Drawing.Point(288, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 15);
             this.label3.TabIndex = 3;
@@ -85,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 83);
+            this.label4.Location = new System.Drawing.Point(289, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 4;
@@ -108,14 +108,14 @@
             // 
             // telefoneRegister
             // 
-            this.telefoneRegister.Location = new System.Drawing.Point(289, 35);
+            this.telefoneRegister.Location = new System.Drawing.Point(288, 27);
             this.telefoneRegister.Name = "telefoneRegister";
             this.telefoneRegister.Size = new System.Drawing.Size(234, 23);
             this.telefoneRegister.TabIndex = 0;
             // 
             // CPFRegister
             // 
-            this.CPFRegister.Location = new System.Drawing.Point(289, 101);
+            this.CPFRegister.Location = new System.Drawing.Point(289, 94);
             this.CPFRegister.Name = "CPFRegister";
             this.CPFRegister.Size = new System.Drawing.Size(234, 23);
             this.CPFRegister.TabIndex = 0;
@@ -138,7 +138,7 @@
             // 
             // CPFErrorLabel
             // 
-            this.CPFErrorLabel.Location = new System.Drawing.Point(289, 127);
+            this.CPFErrorLabel.Location = new System.Drawing.Point(289, 122);
             this.CPFErrorLabel.Name = "CPFErrorLabel";
             this.CPFErrorLabel.Size = new System.Drawing.Size(136, 23);
             this.CPFErrorLabel.TabIndex = 0;
@@ -146,7 +146,7 @@
             // 
             // telefoneErrorLabel
             // 
-            this.telefoneErrorLabel.Location = new System.Drawing.Point(289, 60);
+            this.telefoneErrorLabel.Location = new System.Drawing.Point(289, 53);
             this.telefoneErrorLabel.Name = "telefoneErrorLabel";
             this.telefoneErrorLabel.Size = new System.Drawing.Size(149, 23);
             this.telefoneErrorLabel.TabIndex = 0;

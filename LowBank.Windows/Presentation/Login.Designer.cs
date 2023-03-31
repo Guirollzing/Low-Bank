@@ -54,6 +54,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(3, 73);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(277, 23);
             this.passwordTextBox.TabIndex = 4;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.loginButton);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "LowBank Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
