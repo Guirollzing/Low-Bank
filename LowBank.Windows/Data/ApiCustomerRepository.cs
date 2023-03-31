@@ -19,6 +19,7 @@ namespace LowBank.Windows.Data
         {
             _apiClient = new HttpClient();
 
+            //_apiClient.BaseAddress = new Uri("https://localhost:7069/");
             _apiClient.BaseAddress = new Uri("https://api-lowbank.azurewebsites.net/");
         }
 
@@ -88,9 +89,10 @@ namespace LowBank.Windows.Data
         {
             var customerString = JsonConvert.SerializeObject(customers);
             var content = new StringContent(customerString);
+            content.Headers.Add("Authentication", accessToken);
             content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-
-            _apiClient.PatchAsync("/Customer", content).GetAwaiter().GetResult();            
+            
+            _apiClient.PatchAsync("/Customer", content).GetAwaiter().GetResult();
 
         }
 
@@ -100,7 +102,7 @@ namespace LowBank.Windows.Data
             var content = new StringContent(loginString);
             content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
-            var response = _apiClient.PostAsync("/Login", content).GetAwaiter().GetResult();
+            var response = _apiClient.PostAsync("/Authentication/Login", content).GetAwaiter().GetResult();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
