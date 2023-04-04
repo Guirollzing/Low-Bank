@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace LowBank_Mobile
@@ -16,7 +11,7 @@ namespace LowBank_Mobile
 
         public ApiCustomerRepository()
         {
-            var handler = new HttpClientHandler();
+            /*var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
                 return true;
@@ -24,8 +19,12 @@ namespace LowBank_Mobile
 
 
             _apiClient = new HttpClient(handler);
-            //_apiClient.BaseAddress = new Uri("https://api-lowbank.azurewebsites.net");
-            _apiClient.BaseAddress = new Uri("https://10.0.2.2:7069");
+
+            _apiClient.BaseAddress = new Uri("https://10.0.2.2:7069");*/
+
+            _apiClient = new HttpClient();
+            _apiClient.BaseAddress = new Uri("https://api-lowbank.azurewebsites.net");
+            
         }
 
         public bool Exists(long account)
