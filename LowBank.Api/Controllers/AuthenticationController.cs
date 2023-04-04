@@ -4,6 +4,8 @@ using MongoDB.Driver;
 
 namespace LowBank.Api.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class AuthenticationController : Controller
     {
         public static HashSet<string> AcessTokens = new HashSet<string>();
