@@ -25,7 +25,7 @@ namespace LowBank.Api.Controllers
         {
             var lastCustomers = _collection.AsQueryable().OrderByDescending(c => c.Account.Id).FirstOrDefault();
 
-            var accountId = 1000;
+            long accountId = 1000;
             if(lastCustomers != null)
             {
                 accountId = lastCustomers.Account.Id + 1;
